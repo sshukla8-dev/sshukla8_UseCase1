@@ -1,0 +1,564 @@
+{
+  "files": [
+    "C:\\Users\\sshukla8\\Downloads\\IDAMP\\data\\landing\\stores.csv",
+    "C:\\Users\\sshukla8\\Downloads\\IDAMP\\data\\landing\\products.csv",
+    "C:\\Users\\sshukla8\\Downloads\\IDAMP\\data\\landing\\sales_data.csv"
+  ],
+  "datasets": {
+    "stores": {
+      "file": "C:\\Users\\sshukla8\\Downloads\\IDAMP\\data\\landing\\stores.csv",
+      "shape": {
+        "rows": 10,
+        "columns": 5
+      },
+      "columns": {
+        "store_id": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 10,
+          "sample_values": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        "store_name": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 10,
+          "sample_values": [
+            "Downtown Flagship",
+            "Westfield Mall",
+            "Harbor View",
+            "Peach Tree Center",
+            "Bayfront Store"
+          ]
+        },
+        "region": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 4,
+          "sample_values": [
+            "Northeast",
+            "Northeast",
+            "Northeast",
+            "Southeast",
+            "Southeast"
+          ]
+        },
+        "city": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 10,
+          "sample_values": [
+            "New York",
+            "Boston",
+            "Philadelphia",
+            "Atlanta",
+            "Miami"
+          ]
+        },
+        "state": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 9,
+          "sample_values": [
+            "NY",
+            "MA",
+            "PA",
+            "GA",
+            "FL"
+          ]
+        }
+      }
+    },
+    "products": {
+      "file": "C:\\Users\\sshukla8\\Downloads\\IDAMP\\data\\landing\\products.csv",
+      "shape": {
+        "rows": 20,
+        "columns": 4
+      },
+      "columns": {
+        "product_id": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 20,
+          "sample_values": [
+            "P001",
+            "P002",
+            "P003",
+            "P004",
+            "P005"
+          ]
+        },
+        "product_name": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 20,
+          "sample_values": [
+            "iPhone 15",
+            "Samsung Galaxy S24",
+            "AirPods Pro",
+            "Sony WH-1000XM5",
+            "Levi's 501 Jeans"
+          ]
+        },
+        "category": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 5,
+          "sample_values": [
+            "Electronics",
+            "Electronics",
+            "Electronics",
+            "Electronics",
+            "Apparel"
+          ]
+        },
+        "standard_price": {
+          "dtype": "float64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 19,
+          "min": 12.99,
+          "max": 999.99,
+          "mean": 259.2405
+        }
+      }
+    },
+    "sales_data": {
+      "file": "C:\\Users\\sshukla8\\Downloads\\IDAMP\\data\\landing\\sales_data.csv",
+      "shape": {
+        "rows": 186,
+        "columns": 11
+      },
+      "columns": {
+        "transaction_id": {
+          "dtype": "str",
+          "null_count": 8,
+          "null_pct": 4.3,
+          "unique_count": 166,
+          "sample_values": [
+            "TXN10046",
+            "TXN10078",
+            "RET10009",
+            "RET10004",
+            "TXN10077"
+          ]
+        },
+        "transaction_date": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 116,
+          "sample_values": [
+            "01/15/2024",
+            "2024-01-17",
+            "2024-03-03",
+            "2024-02-20",
+            "2024-01-05"
+          ]
+        },
+        "store_id": {
+          "dtype": "str",
+          "null_count": 5,
+          "null_pct": 2.69,
+          "unique_count": 10,
+          "sample_values": [
+            "S09",
+            "S10",
+            "S07",
+            "S06",
+            "S08"
+          ]
+        },
+        "product_id": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 20,
+          "sample_values": [
+            "P001",
+            "P014",
+            "P012",
+            "P012",
+            "P016"
+          ]
+        },
+        "product_name": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 20,
+          "sample_values": [
+            "iPhone 15",
+            "TRX Resistance Bands",
+            "Nespresso Machine",
+            "Nespresso Machine",
+            "CamelBak Water Bottle"
+          ]
+        },
+        "category": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 21,
+          "sample_values": [
+            "Electronics",
+            "Sport",
+            "Home & Kitchen",
+            "Home & Kitchen",
+            "Sports"
+          ]
+        },
+        "quantity": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 11,
+          "min": -4.0,
+          "max": 8.0,
+          "mean": 3.9408602150537635
+        },
+        "unit_price": {
+          "dtype": "float64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 172,
+          "min": 0.01,
+          "max": 9999.99,
+          "mean": 356.27005376344084
+        },
+        "total_amount": {
+          "dtype": "float64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 172,
+          "min": -1230.56,
+          "max": 9999.99,
+          "mean": 1215.24311827957
+        },
+        "customer_segment": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 16,
+          "sample_values": [
+            "Loyal",
+            "Premium",
+            "Loyal",
+            "Premium",
+            "Loyal"
+          ]
+        },
+        "payment_method": {
+          "dtype": "str",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "unique_count": 4,
+          "sample_values": [
+            "Apple Pay",
+            "PayPal",
+            "Apple Pay",
+            "Apple Pay",
+            "PayPal"
+          ]
+        }
+      }
+    }
+  },
+  "analysis": {
+    "run_id": "f5dad4b3-50bb-4cc6-9d89-0a1e8ede82b5",
+    "profiling_timestamp": "2024",
+    "datasets_profiled": 3,
+    "total_rows": 216,
+    "semantic_meanings": {
+      "stores": {
+        "store_id": "Unique store identifier; primary key (S01-S10, 10 distinct values); string format",
+        "store_name": "Descriptive name of physical store location (e.g., 'Downtown Flagship'); unique per store",
+        "region": "Geographic region classification (Northeast, Southeast, etc.; 4 distinct regions)",
+        "city": "City where store is located (10 distinct cities); supports geo-hierarchical analysis",
+        "state": "US state abbreviation (2-letter code; 9 distinct states); geographic dimension"
+      },
+      "products": {
+        "product_id": "Unique product identifier; primary key (P001-P020, 20 distinct values); string format",
+        "product_name": "Human-readable product name (e.g., 'iPhone 15', 'Nespresso Machine'); unique per product",
+        "category": "Product category classification (5 distinct: Electronics, Apparel, Sport, Home & Kitchen, and 1 other)",
+        "standard_price": "List/standard price in USD; numeric field; range $12.99\u2013$999.99; mean $259.24"
+      },
+      "sales_data": {
+        "transaction_id": "Unique transaction identifier (TXN/RET prefix patterns); 166 distinct non-null values; 4.3% null (8 rows)",
+        "transaction_date": "Date of sale transaction; mixed format (MM/DD/YYYY and YYYY-MM-DD); 116 distinct dates; spans Jan\u2013Mar 2024",
+        "store_id": "Foreign key to stores.store_id; 10 distinct values (S01-S10); 2.69% null (5 rows); referential integrity risk",
+        "product_id": "Foreign key to products.product_id; 20 distinct values (P001-P020); 0% null; strong FK relationship",
+        "product_name": "Denormalized product name copy (mirrors products table); 20 distinct values; 0% null",
+        "category": "Denormalized product category (21 distinct values observed vs 5 in products table); 0% null; **data quality flag: category mismatch**",
+        "quantity": "Transaction quantity; integer; range -4 to +8; mean 3.94; negative values indicate returns/refunds",
+        "unit_price": "Price per unit at transaction time; float; range $0.01\u2013$9999.99; mean $356.27; **outlier flag: wide range**",
+        "total_amount": "Transaction total (quantity \u00d7 unit_price); float; range -$1230.56 to +$9999.99; mean $1215.24; supports negative amounts for returns",
+        "customer_segment": "Customer classification (16 distinct values: Loyal, Premium, etc.); 0% null; dimension attribute",
+        "payment_method": "Payment type (4 distinct: Apple Pay, PayPal, and 2 others); 0% null; categorical attribute"
+      }
+    },
+    "join_keys": [
+      {
+        "left_dataset": "sales_data",
+        "left_column": "store_id",
+        "right_dataset": "stores",
+        "right_column": "store_id",
+        "cardinality": "many-to-one",
+        "confidence": "high",
+        "data_quality_note": "2.69% nulls in left column; 5 rows will not join; all 10 stores referenced; no orphaned store_ids"
+      },
+      {
+        "left_dataset": "sales_data",
+        "left_column": "product_id",
+        "right_dataset": "products",
+        "right_column": "product_id",
+        "cardinality": "many-to-one",
+        "confidence": "high",
+        "data_quality_note": "0% nulls; all 20 products referenced; complete referential integrity"
+      }
+    ],
+    "data_quality_observations": {
+      "critical_issues": [
+        "sales_data.category has 21 distinct values vs products.category with only 5 distinct values \u2014 indicates denormalization inconsistency or data entry errors; values like 'Sport' and 'Sports' suggest case/naming inconsistency",
+        "sales_data.unit_price range $0.01\u2013$9999.99 is extremely wide (500,000x variation); outliers >$5000 should be validated against business rules",
+        "sales_data.transaction_date has mixed format patterns (MM/DD/YYYY and YYYY-MM-DD); standardization required before parsing",
+        "sales_data.quantity has negative values (-1 to -4); semantic meaning appears to be returns/refunds but not labeled; business logic required for filtering"
+      ],
+      "nullability_issues": [
+        "sales_data.transaction_id: 4.3% null (8 rows); may indicate failed transactions or data capture gaps; primary key cardinality compromise (166 non-null unique vs 186 rows)",
+        "sales_data.store_id: 2.69% null (5 rows); orphaned transactions without store assignment; cannot join to stores dimension"
+      ],
+      "cardinality_observations": [
+        "stores: 10 stores \u00d7 5 attributes; compact dimension; 1:1 store name uniqueness",
+        "products: 20 products \u00d7 4 attributes; compact dimension; categorical skew (Electronics dominates samples)",
+        "sales_data: 186 transactions; 116 unique dates (sparse temporal coverage); customer_segment shows high cardinality (16 distinct values) for only 186 rows \u2014 likely low-frequency customer segments or data quality issue",
+        "stores.store_id cardinality in sales_data (10 unique) matches stores dimension cardinality; good coverage across all stores"
+      ],
+      "format_and_consistency": [
+        "transaction_id prefix patterns: 'TXN' for sales, 'RET' for returns/refunds; useful for transaction type classification",
+        "product_id format: consistent P-prefixed numeric (P001-P020); 0% malformed",
+        "store_id format: consistent S-prefixed numeric (S01-S10); 0% malformed",
+        "state codes: valid 2-letter US state abbreviations; no malformed entries"
+      ],
+      "denormalization_flags": [
+        "sales_data duplicates product name and category from products table; creates maintenance risk if products.product_name changes",
+        "customer_segment (16 distinct) appears to be a transactional attribute, not a master dimension reference; may be correct design but not linked to customer dimension"
+      ]
+    },
+    "bronze_ingestion_recommendations": [
+      "SCHEMA: Preserve all columns as-is (string, int64, float64) for raw bronze layer; no transformation",
+      "NULLS: Flag sales_data rows with null transaction_id (8 rows) and null store_id (5 rows) during ingestion; consider dedicated 'null_flag' column",
+      "DATES: Store transaction_date as string in bronze; add parsing logic and error tracking in Silver layer; separate malformed date records",
+      "QUANTITY: Preserve negative quantities in bronze; add transaction_type classifier in Silver (SALE/RETURN) based on quantity sign",
+      "PRICE: Store unit_price and total_amount as-is; flag rows with unit_price < $1.00 or > $5000 as potential data entry errors for audit in Silver",
+      "CATEGORIES: Capture category mismatch between sales_data and products table in metadata; recommend manual reconciliation before Gold",
+      "REFERENTIAL INTEGRITY: For Silver/Gold layers, implement left outer join on store_id (retain nulls) and inner join on product_id; log unmatched store_ids",
+      "IDEMPOTENCY: Use transaction_id (accounting for nulls) + store_id + product_id + transaction_date as natural key candidate (with caution); consider composite key strategy due to nulls"
+    ],
+    "schema_json": {
+      "stores": {
+        "primary_key": [
+          "store_id"
+        ],
+        "columns": [
+          {
+            "name": "store_id",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 10,
+            "description": "Store identifier"
+          },
+          {
+            "name": "store_name",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 10,
+            "description": "Store name"
+          },
+          {
+            "name": "region",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 4,
+            "description": "Geographic region"
+          },
+          {
+            "name": "city",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 10,
+            "description": "City location"
+          },
+          {
+            "name": "state",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 9,
+            "description": "State code"
+          }
+        ]
+      },
+      "products": {
+        "primary_key": [
+          "product_id"
+        ],
+        "columns": [
+          {
+            "name": "product_id",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 20,
+            "description": "Product identifier"
+          },
+          {
+            "name": "product_name",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 20,
+            "description": "Product name"
+          },
+          {
+            "name": "category",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 5,
+            "description": "Product category"
+          },
+          {
+            "name": "standard_price",
+            "dtype": "float64",
+            "nullable": false,
+            "cardinality": 19,
+            "min": 12.99,
+            "max": 999.99,
+            "mean": 259.24,
+            "description": "Standard price USD"
+          }
+        ]
+      },
+      "sales_data": {
+        "primary_key": [
+          "transaction_id"
+        ],
+        "foreign_keys": [
+          {
+            "column": "store_id",
+            "references": "stores.store_id"
+          },
+          {
+            "column": "product_id",
+            "references": "products.product_id"
+          }
+        ],
+        "columns": [
+          {
+            "name": "transaction_id",
+            "dtype": "string",
+            "nullable": true,
+            "null_count": 8,
+            "null_pct": 4.3,
+            "cardinality": 166,
+            "description": "Transaction ID; prefix TXN/RET"
+          },
+          {
+            "name": "transaction_date",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 116,
+            "format_issue": "mixed MM/DD/YYYY and YYYY-MM-DD",
+            "description": "Transaction date"
+          },
+          {
+            "name": "store_id",
+            "dtype": "string",
+            "nullable": true,
+            "null_count": 5,
+            "null_pct": 2.69,
+            "cardinality": 10,
+            "description": "Store reference (FK to stores)"
+          },
+          {
+            "name": "product_id",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 20,
+            "description": "Product reference (FK to products)"
+          },
+          {
+            "name": "product_name",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 20,
+            "description": "Product name (denormalized)"
+          },
+          {
+            "name": "category",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 21,
+            "quality_issue": "mismatch vs products table (5 values)",
+            "description": "Product category (denormalized)"
+          },
+          {
+            "name": "quantity",
+            "dtype": "int64",
+            "nullable": false,
+            "cardinality": 11,
+            "min": -4,
+            "max": 8,
+            "mean": 3.94,
+            "description": "Transaction quantity; negative=return"
+          },
+          {
+            "name": "unit_price",
+            "dtype": "float64",
+            "nullable": false,
+            "cardinality": 172,
+            "min": 0.01,
+            "max": 9999.99,
+            "mean": 356.27,
+            "outlier_flag": "extreme range",
+            "description": "Price per unit"
+          },
+          {
+            "name": "total_amount",
+            "dtype": "float64",
+            "nullable": false,
+            "cardinality": 172,
+            "min": -1230.56,
+            "max": 9999.99,
+            "mean": 1215.24,
+            "description": "Total transaction amount"
+          },
+          {
+            "name": "customer_segment",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 16,
+            "description": "Customer segment/tier"
+          },
+          {
+            "name": "payment_method",
+            "dtype": "string",
+            "nullable": false,
+            "cardinality": 4,
+            "description": "Payment method used"
+          }
+        ]
+      }
+    }
+  }
+}

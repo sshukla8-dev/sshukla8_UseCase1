@@ -1,0 +1,21 @@
+source_schema,source_table,source_column,target_schema,target_table,target_column,transformation_type,transformation_logic
+landing,stores,store_id,bronze,stores,store_id,direct_copy,Copy string value as-is; primary key field (S01-S10)
+landing,stores,store_name,bronze,stores,store_name,direct_copy,Copy string value as-is; descriptive store location name
+landing,stores,region,bronze,stores,region,direct_copy,Copy string value as-is; geographic region classification (4 distinct values)
+landing,stores,city,bronze,stores,city,direct_copy,Copy string value as-is; city name for geo-hierarchical analysis
+landing,stores,state,bronze,stores,state,direct_copy,"Copy string value as-is; US state abbreviation (2-letter code, 9 distinct states)"
+landing,products,product_id,bronze,products,product_id,direct_copy,Copy string value as-is; primary key field (P001-P020)
+landing,products,product_name,bronze,products,product_name,direct_copy,Copy string value as-is; human-readable product name
+landing,products,category,bronze,products,category,direct_copy,Copy string value as-is; product category classification (5 distinct categories)
+landing,products,standard_price,bronze,products,standard_price,direct_copy,"Copy float64 value as-is; standard price in USD (range $12.99-$999.99, mean $259.24)"
+landing,sales_data,transaction_id,bronze,sales_data,transaction_id,null_handling,Copy string value as-is; handle 8 null values (4.3% null rate); preserve TXN/RET prefix patterns
+landing,sales_data,transaction_date,bronze,sales_data,transaction_date,no_standardization,Copy string value as-is; preserve mixed date formats (MM/DD/YYYY and YYYY-MM-DD); 116 distinct dates spanning Jan-Mar 2024
+landing,sales_data,store_id,bronze,sales_data,store_id,null_handling,Copy string value as-is; foreign key to stores.store_id; handle 5 null values (2.69% null rate); referential integrity risk flag
+landing,sales_data,product_id,bronze,sales_data,product_id,direct_copy,Copy string value as-is; foreign key to products.product_id; no null values; 20 distinct values
+landing,sales_data,product_name,bronze,sales_data,product_name,direct_copy,Copy string value as-is; denormalized product name copy (mirrors products table); no null values
+landing,sales_data,category,bronze,sales_data,category,direct_copy,Copy string value as-is; denormalized product category (21 distinct values observed vs 5 in products table); data quality flag: category mismatch detected
+landing,sales_data,quantity,bronze,sales_data,quantity,direct_copy,Copy int64 value as-is; range -4 to +8; mean 3.94; negative values indicate returns/refunds
+landing,sales_data,unit_price,bronze,sales_data,unit_price,direct_copy,Copy float64 value as-is; transactional price per unit; range $0.01-$9999.99; mean $356.27; outlier flag: wide variance
+landing,sales_data,total_amount,bronze,sales_data,total_amount,direct_copy,Copy float64 value as-is; calculated transaction total; range -$1230.56 to $9999.99; mean $1215.24; includes negative amounts for returns
+landing,sales_data,customer_segment,bronze,sales_data,customer_segment,direct_copy,Copy string value as-is; customer segmentation classification (16 distinct segments); no null values
+landing,sales_data,payment_method,bronze,sales_data,payment_method,direct_copy,Copy string value as-is; payment method classification (4 distinct methods); no null values

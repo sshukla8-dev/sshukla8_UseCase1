@@ -1,0 +1,21 @@
+source_schema,source_table,source_column,target_schema,target_table,target_column,transformation_type,transformation_logic
+landing,stores,store_id,bronze,stores,store_id,direct_copy,Copy source column as-is; primary key identifier
+landing,stores,store_name,bronze,stores,store_name,direct_copy,Copy source column as-is; descriptive store location name
+landing,stores,region,bronze,stores,region,direct_copy,Copy source column as-is; geographic region classification
+landing,stores,city,bronze,stores,city,direct_copy,Copy source column as-is; city location
+landing,stores,state,bronze,stores,state,direct_copy,Copy source column as-is; US state abbreviation
+landing,products,product_id,bronze,products,product_id,direct_copy,Copy source column as-is; primary key identifier
+landing,products,product_name,bronze,products,product_name,direct_copy,Copy source column as-is; descriptive product name
+landing,products,category,bronze,products,category,direct_copy,Copy source column as-is; product category classification
+landing,products,standard_price,bronze,products,standard_price,direct_copy,Copy source column as-is; catalog price in USD
+landing,sales_data,transaction_id,bronze,sales_data,transaction_id,direct_copy,Copy source column as-is; fact key with 8 nulls (4.3%) to be preserved; prefix indicates transaction type (TXN/RET)
+landing,sales_data,transaction_date,bronze,sales_data,transaction_date,direct_copy,Copy source column as-is; mixed format dates (MM/DD/YYYY and YYYY-MM-DD) preserved for inspection; standardization deferred to Silver layer
+landing,sales_data,store_id,bronze,sales_data,store_id,direct_copy,Copy source column as-is; foreign key to stores dimension with 5 nulls (2.69%) to be preserved
+landing,sales_data,product_id,bronze,sales_data,product_id,direct_copy,Copy source column as-is; foreign key to products dimension with perfect cardinality match
+landing,sales_data,product_name,bronze,sales_data,product_name,direct_copy,Copy source column as-is; denormalized product name field (may diverge from products.product_name)
+landing,sales_data,category,bronze,sales_data,category,direct_copy,Copy source column as-is; denormalized category field with 21 unique values (vs 5 in products dimension); inconsistencies preserved
+landing,sales_data,quantity,bronze,sales_data,quantity,direct_copy,Copy source column as-is; unit quantity with range -4 to 8; negative values indicate returns
+landing,sales_data,unit_price,bronze,sales_data,unit_price,direct_copy,Copy source column as-is; transaction-time unit price (may differ from standard_price)
+landing,sales_data,total_amount,bronze,sales_data,total_amount,direct_copy,Copy source column as-is; calculated line amount (quantity × unit_price); negative values for returns
+landing,sales_data,customer_segment,bronze,sales_data,customer_segment,direct_copy,Copy source column as-is; customer classification with 16 unique values
+landing,sales_data,payment_method,bronze,sales_data,payment_method,direct_copy,Copy source column as-is; payment type with 4 unique values

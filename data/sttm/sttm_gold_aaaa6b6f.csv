@@ -1,0 +1,20 @@
+source_schema,source_table,source_column,target_schema,target_table,target_column,transformation_type,transformation_logic
+gold,gold_sales_by_category_region,,gold,gold_sales_by_category_region,pk_gold_id,Indirect,Auto-generated sequential surrogate primary key starting from 1
+silver,stores_silver,store_id,gold,gold_sales_by_category_region,store_id,Direct,Passthrough from stores_silver.store_id
+silver,stores_silver,store_name,gold,gold_sales_by_category_region,store_name,Direct,Passthrough from stores_silver.store_name
+silver,stores_silver,region,gold,gold_sales_by_category_region,region,Direct,Passthrough from stores_silver.region; required for grouping by store region
+silver,stores_silver,city,gold,gold_sales_by_category_region,city,Direct,Passthrough from stores_silver.city
+silver,stores_silver,state,gold,gold_sales_by_category_region,state,Direct,Passthrough from stores_silver.state
+silver,sales_data_silver,product_id,gold,gold_sales_by_category_region,product_id,Direct,Passthrough from sales_data_silver.product_id
+silver,sales_data_silver,product_name,gold,gold_sales_by_category_region,product_name,Direct,Passthrough from sales_data_silver.product_name
+silver,sales_data_silver,category,gold,gold_sales_by_category_region,category,Direct,Passthrough from sales_data_silver.category; required for grouping by product category
+silver,sales_data_silver,quantity,gold,gold_sales_by_category_region,quantity,Direct,Passthrough from sales_data_silver.quantity; numeric column for aggregation
+silver,sales_data_silver,unit_price,gold,gold_sales_by_category_region,unit_price,Direct,Passthrough from sales_data_silver.unit_price; numeric column for revenue calculations
+silver,sales_data_silver,total_amount,gold,gold_sales_by_category_region,total_amount,Direct,Passthrough from sales_data_silver.total_amount; required for total sales revenue aggregation by category and region
+silver,sales_data_silver,transaction_date,gold,gold_sales_by_category_region,transaction_date,Direct,Passthrough from sales_data_silver.transaction_date
+silver,sales_data_silver,customer_segment,gold,gold_sales_by_category_region,customer_segment,Direct,Passthrough from sales_data_silver.customer_segment
+silver,sales_data_silver,payment_method,gold,gold_sales_by_category_region,payment_method,Direct,Passthrough from sales_data_silver.payment_method
+gold,gold_sales_by_category_region,,gold,gold_sales_by_category_region,total_revenue_by_category_region,Indirect,Aggregate SUM(total_amount) grouped by region and category to identify top-performing product categories by total sales revenue for each store region
+silver,sales_data_silver,store_id,gold,gold_sales_by_category_region,store_id_fk,Indirect,Join key: sales_data_silver.store_id -> stores_silver.store_id to enrich sales transactions with store region information
+silver,products_silver,product_id,gold,gold_sales_by_category_region,product_id_fk,Indirect,Join key: sales_data_silver.product_id -> products_silver.product_id to enrich product details
+silver,sales_data_silver,_load_timestamp,gold,gold_sales_by_category_region,_load_timestamp,Direct,Passthrough from sales_data_silver._load_timestamp; metadata for data lineage

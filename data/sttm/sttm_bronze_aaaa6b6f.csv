@@ -1,0 +1,21 @@
+source_schema,source_table,source_column,target_schema,target_table,target_column,transformation_type,transformation_logic
+landing,stores,store_id,bronze,stores,store_id,direct_load,Copy string value as-is; primary key identifier
+landing,stores,store_name,bronze,stores,store_name,direct_load,Copy string value as-is
+landing,stores,region,bronze,stores,region,direct_load,Copy string value as-is; 4 unique regions
+landing,stores,city,bronze,stores,city,direct_load,Copy string value as-is
+landing,stores,state,bronze,stores,state,direct_load,Copy string value as-is; US state codes
+landing,products,product_id,bronze,products,product_id,direct_load,Copy string value as-is; primary key identifier
+landing,products,product_name,bronze,products,product_name,direct_load,Copy string value as-is
+landing,products,category,bronze,products,category,direct_load,Copy string value as-is; 5 unique product categories
+landing,products,standard_price,bronze,products,standard_price,direct_load,Copy float64 value as-is; MSRP range $12.99–$999.99
+landing,sales_data,transaction_id,bronze,sales_data,transaction_id,direct_load,"Copy string value as-is; 8 nulls (4.3%), mixed prefixes TXN/RET indicating transaction type"
+landing,sales_data,transaction_date,bronze,sales_data,transaction_date,direct_load,"Copy string value as-is; mixed format (MM/DD/YYYY and YYYY-MM-DD), requires parsing in later layers"
+landing,sales_data,store_id,bronze,sales_data,store_id,direct_load,"Copy string value as-is; foreign key to stores, 5 nulls (2.69%)"
+landing,sales_data,product_id,bronze,sales_data,product_id,direct_load,"Copy string value as-is; foreign key to products, no nulls"
+landing,sales_data,product_name,bronze,sales_data,product_name,direct_load,Copy string value as-is; denormalized product name
+landing,sales_data,category,bronze,sales_data,category,direct_load,"Copy string value as-is; denormalized category, 21 unique values (variance from products table)"
+landing,sales_data,quantity,bronze,sales_data,quantity,direct_load,"Copy int64 value as-is; range -4 to 8, negative values indicate returns"
+landing,sales_data,unit_price,bronze,sales_data,unit_price,direct_load,"Copy float64 value as-is; range $0.01–$9,999.99, variance from standard_price indicates promotions"
+landing,sales_data,total_amount,bronze,sales_data,total_amount,direct_load,"Copy float64 value as-is; range -$1,230.56 to $9,999.99, negative amounts match negative quantities"
+landing,sales_data,customer_segment,bronze,sales_data,customer_segment,direct_load,"Copy string value as-is; 16 unique segments (Loyal, Premium, Standard, etc.)"
+landing,sales_data,payment_method,bronze,sales_data,payment_method,direct_load,"Copy string value as-is; 4 unique payment methods (Apple Pay, PayPal, etc.)"
